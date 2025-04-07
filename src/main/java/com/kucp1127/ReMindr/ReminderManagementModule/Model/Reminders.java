@@ -2,6 +2,7 @@ package com.kucp1127.ReMindr.ReminderManagementModule.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,8 @@ public class Reminders {
 
     private String title;
     private String description;
+
+    @JsonFormat(pattern = "MMM dd, yyyy", locale = "en")
     private Date date;
     private String priority;
 
